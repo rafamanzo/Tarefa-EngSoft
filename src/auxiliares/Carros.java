@@ -16,11 +16,22 @@ public class Carros {
 	}
 	
 	public void remove(int num){
-		System.out.println("*****Removeu*******");
 		lista.remove(num);
+	}
+	
+	public void atualize(int antigo, Carro novo){
+		Carro carro = lista.get(antigo);		
+		carro.setAno(novo.getAno());
+		carro.setMarca(novo.getMarca());
+		carro.setModelo(novo.getModelo());
+		carro.setCor(novo.getCor());
 	}
 	
 	public List<Carro> getLista(){
 		return lista;
+	}
+	
+	public Carro getCarro(int num){
+		return lista.get(num);
 	}
 }

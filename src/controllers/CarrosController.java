@@ -37,4 +37,16 @@ public class CarrosController {
 		carros.remove(num);
 		result.redirectTo(CarrosController.class).lista();
 	}
+	
+	@Path("/carros/edicao/{num}")
+	public void edicao(int num){
+		result.include("carro", carros.getCarro(num));
+		result.include("index", num);
+	}
+	
+	@Path("/carros/atualize/{antigo}")
+	public void atualize(final Carro carro, int antigo){
+		carros.atualize(antigo, carro);
+		result.redirectTo(CarrosController.class).lista();
+	}
 }

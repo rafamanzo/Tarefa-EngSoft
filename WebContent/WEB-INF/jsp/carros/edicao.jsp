@@ -8,28 +8,28 @@
 </head>
 <body>
 	<div class="cabecalho">
-		<h1>Cadastro</h1>
+		<h1>Edição</h1>
 	</div>
 	
 	<div class="corpo">
-		<p><a href="../">Home</a></p>
-		<form action="salve">
+		<p><a href="../../">Home</a></p>
+		<form action="../atualize/${index}">
 		<table border="0">
 			<tr>
 				<td>Marca</td>
-				<td><input name="carro.marca" type="text"></input></td>
+				<td><input name="carro.marca" type="text" value="${carro.marca}"></input></td>
 			</tr>
 			<tr>
 				<td>Modelo</td>
-				<td><input name="carro.modelo" type="text"></input></td>
+				<td><input name="carro.modelo" type="text" value="${carro.modelo}"></input></td>
 			</tr>
 			<tr>
 				<td>Cor</td>
-				<td><input name="carro.cor" type="text"></input></td>
+				<td><input name="carro.cor" type="text" value="${carro.cor}"></input></td>
 			</tr>
 			<tr>
 				<td>Ano</td>
-				<td><input name="carro.ano" type="text"></input></td>
+				<td><input name="carro.ano" type="text" value="${carro.ano}"></input></td>
 			</tr>
 			<tr><td colspan="2" align="center"><input type="submit"/></td></tr>
 		</table>

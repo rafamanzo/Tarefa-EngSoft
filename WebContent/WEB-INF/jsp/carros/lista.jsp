@@ -23,6 +23,7 @@
 					<td>${carro.ano}</td>
 					<td>
 						<a href="remova/${status.index}">Excluir</a>
+						<a href="edicao/${status.index}">Editar</a>
 					</td>
 				</tr>
 			</c:forEach>
