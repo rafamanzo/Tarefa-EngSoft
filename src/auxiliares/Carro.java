@@ -6,10 +6,6 @@ public class Carro {
 	private String cor;
 	private Integer ano;
 	
-	public Carro(){
-		
-	}
-	
 	public String getMarca() {
 		return marca;
 	}

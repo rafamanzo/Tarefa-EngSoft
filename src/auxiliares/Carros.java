@@ -11,11 +11,7 @@ import auxiliares.Carro;
 public class Carros {
 	private List<Carro> lista = new ArrayList<Carro>();
 
-	public Carros(){
-		System.out.println("*************Criou!!!****************");
-	}
 	public void adiciona(Carro carro){
-		System.out.println("*************Adicionou!!!****************");
 		lista.add(carro);
 	}
 	
@@ -24,7 +20,6 @@ public class Carros {
 	}
 	
 	public List<Carro> getLista(){
-		System.out.println("*************Listou!!!****************");
 		return lista;
 	}
 }

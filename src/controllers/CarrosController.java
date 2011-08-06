@@ -29,10 +29,6 @@ public class CarrosController {
 	}
 	
 	public void lista(){
-		System.out.println("******************");
-		for(Carro carro : carros.getLista()){
-			System.out.println("*********"+carro.getModelo()+"***********");
-		}
 		result.include("carros", carros);
 	}
 	
