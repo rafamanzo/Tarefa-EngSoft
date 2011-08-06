@@ -11,8 +11,8 @@
 	
 	<div class="corpo">
 		<ul>
-			<li><a href="#" class="menu">Cadastrar</a></li>
-			<li><a href="#" class="menu">Listar</a></li>
+			<li><a href="carros/cadastro" class="menu">Cadastrar</a></li>
+			<li><a href="carros/lista" class="menu">Listar</a></li>
 		</ul>
 	</div>
 	
