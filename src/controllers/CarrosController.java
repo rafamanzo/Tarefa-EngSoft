@@ -32,8 +32,9 @@ public class CarrosController {
 		result.include("carros", carros);
 	}
 	
-	public void remova(final Carro carro){
-		carros.remove(carro);
+	@Path("/carros/remova/{num}")
+	public void remova(int num){
+		carros.remove(num);
 		result.redirectTo(CarrosController.class).lista();
 	}
 }

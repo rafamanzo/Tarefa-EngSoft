@@ -15,8 +15,9 @@ public class Carros {
 		lista.add(carro);
 	}
 	
-	public void remove(Carro carro){
-		lista.remove(carro);
+	public void remove(int num){
+		System.out.println("*****Removeu*******");
+		lista.remove(num);
 	}
 	
 	public List<Carro> getLista(){

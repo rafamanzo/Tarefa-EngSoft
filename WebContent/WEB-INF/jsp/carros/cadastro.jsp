@@ -12,6 +12,7 @@
 	</div>
 	
 	<div class="corpo">
+		<p><a href="../">Home</a></p>
 		<form action="salve">
 		<table border="0">
 			<tr>

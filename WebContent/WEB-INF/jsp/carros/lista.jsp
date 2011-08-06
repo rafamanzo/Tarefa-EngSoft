@@ -13,13 +13,17 @@
 	</div>
 	
 	<div class="body">
+		<p><a href="../">Home</a></p>
 		<table>
-			<c:forEach items="${carros.lista}" var="carro">
+			<c:forEach items="${carros.lista}" var="carro" varStatus="status">
 				<tr>
 					<td>${carro.marca}</td>
 					<td>${carro.modelo}</td>
 					<td>${carro.cor}</td>
 					<td>${carro.ano}</td>
+					<td>
+						<a href="remova/${status.index}">Excluir</a>
+					</td>
 				</tr>
 			</c:forEach>
 		</table>
