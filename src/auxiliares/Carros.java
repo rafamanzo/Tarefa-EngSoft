@@ -30,23 +30,46 @@ public class Carros {
         }
 	}
 	
-	public void remove(int num){
-		lista.remove(num);
+	public void remove(long num){
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        session = sessionFactory.openSession();
+		
+		session.delete(session.get(Carro.class, num));
+		session.flush();
+		
+		session.close();
 	}
 	
-	public void atualize(int antigo, Carro novo){
-		Carro carro = lista.get(antigo);		
-		carro.setAno(novo.getAno());
-		carro.setMarca(novo.getMarca());
-		carro.setModelo(novo.getModelo());
-		carro.setCor(novo.getCor());
+	public void atualize(Carro novo){
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        session = sessionFactory.openSession();
+        
+        session.saveOrUpdate(novo);
+        session.flush();
+        
+        session.close();
 	}
 	
+	@SuppressWarnings("unchecked")
 	public List<Carro> getLista(){
-		return lista;
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        session = sessionFactory.openSession();
+        
+		List<Carro> l = session.createCriteria(Carro.class).list();
+		
+		session.close();
+		
+		return l;
 	}
 	
-	public Carro getCarro(int num){
-		return lista.get(num);
+	public Carro getCarro(long num){
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        session = sessionFactory.openSession();
+        
+		Carro c = (Carro) session.get(Carro.class, num);
+		
+		session.close();
+		
+		return c;
 	}
 }

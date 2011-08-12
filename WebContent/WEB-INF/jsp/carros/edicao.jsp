@@ -13,7 +13,8 @@
 	
 	<div class="corpo">
 		<p><a href="../../">Home</a></p>
-		<form action="../atualize/${index}">
+		<form action="../atualize" method="post">
+		<input type="hidden" name="carro.id" value="${carro.id}"></input>
 		<table border="0">
 			<tr>
 				<td>Marca</td>

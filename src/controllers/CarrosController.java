@@ -33,20 +33,19 @@ public class CarrosController {
 	}
 	
 	@Path("/carros/remova/{num}")
-	public void remova(int num){
+	public void remova(long num){
 		carros.remove(num);
 		result.redirectTo(CarrosController.class).lista();
 	}
 	
 	@Path("/carros/edicao/{num}")
-	public void edicao(int num){
+	public void edicao(long num){
 		result.include("carro", carros.getCarro(num));
 		result.include("index", num);
 	}
 	
-	@Path("/carros/atualize/{antigo}")
-	public void atualize(final Carro carro, int antigo){
-		carros.atualize(antigo, carro);
+	public void atualize(final Carro carro){
+		carros.atualize(carro);
 		result.redirectTo(CarrosController.class).lista();
 	}
 }
