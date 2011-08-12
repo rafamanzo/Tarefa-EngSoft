@@ -5,6 +5,15 @@ public class Carro {
 	private String modelo;
 	private String cor;
 	private Integer ano;
+	private long id;
+	
+	public void setId(long id){
+		this.id = id;
+	}
+	
+	public long getId(){
+		return this.id;
+	}
 	
 	public String getMarca() {
 		return marca;

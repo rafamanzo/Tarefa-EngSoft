@@ -5,14 +5,29 @@ import java.util.List;
 import br.com.caelum.vraptor.ioc.ApplicationScoped;
 import br.com.caelum.vraptor.ioc.Component;
 import auxiliares.Carro;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 
 @Component
 @ApplicationScoped
 public class Carros {
 	private List<Carro> lista = new ArrayList<Carro>();
+	private Session session = null;
 
 	public void adiciona(Carro carro){
-		lista.add(carro);
+		try{
+			SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+            session = sessionFactory.openSession();
+            
+            session.save(carro);
+            
+            session.flush();
+            session.close();
+        	lista.add(carro);
+		}catch( Exception e ){
+            System.out.println( e.getMessage() );
+        }
 	}
 	
 	public void remove(int num){
