@@ -15,38 +15,51 @@ public class Carros {
 	private List<Carro> lista = new ArrayList<Carro>();
 	private Session session = null;
 
-	public void adiciona(Carro carro){
-		try{
-			SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
-            session = sessionFactory.openSession();
-            
-            session.save(carro);
-            
-            session.flush();
-            session.close();
-        	lista.add(carro);
-		}catch( Exception e ){
-            System.out.println( e.getMessage() );
-        }
+	public void adiciona(Carro carro) {
+		try {
+			SessionFactory sessionFactory = new Configuration().configure()
+					.buildSessionFactory();
+			session = sessionFactory.openSession();
+
+			session.save(carro);
+
+			session.flush();
+			session.close();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 	}
-	
-	public void remove(int num){
+
+	public void remove(int num) {
 		lista.remove(num);
 	}
-	
-	public void atualize(int antigo, Carro novo){
-		Carro carro = lista.get(antigo);		
+
+	public void atualize(int antigo, Carro novo) {
+		Carro carro = lista.get(antigo);
 		carro.setAno(novo.getAno());
 		carro.setMarca(novo.getMarca());
 		carro.setModelo(novo.getModelo());
 		carro.setCor(novo.getCor());
 	}
-	
-	public List<Carro> getLista(){
+
+	@SuppressWarnings("unchecked")
+	public List getLista() {
+		try {
+			List l;
+
+			SessionFactory sessionFactory = new Configuration().configure()
+					.buildSessionFactory();
+			session = sessionFactory.openSession();
+
+			l = session.createQuery("from carros").list();
+			return l;
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 		return lista;
 	}
-	
-	public Carro getCarro(int num){
+
+	public Carro getCarro(int num) {
 		return lista.get(num);
 	}
 }
