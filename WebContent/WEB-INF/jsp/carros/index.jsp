@@ -13,6 +13,7 @@
 		<ul>
 			<li><a href="carros/cadastro" class="menu">Cadastrar</a></li>
 			<li><a href="carros/lista" class="menu">Listar</a></li>
+			<li><a href="cadastro-carros.zip" class="menu">Código Fonte</a></li>
 		</ul>
 	</div>
 	

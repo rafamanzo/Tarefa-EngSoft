@@ -15,15 +15,22 @@
 	<div class="body">
 		<p><a href="../">Home</a></p>
 		<table>
-			<c:forEach items="${carros.lista}" var="carro" varStatus="status">
+			<tr>
+				<th>Marca</th>
+				<th>Modelo</th>
+				<th>Cor</th>
+				<th>Ano</th>
+				<th>Ação</th>
+			</tr>
+			<c:forEach items="${carros.lista}" var="carro" >
 				<tr>
 					<td>${carro.marca}</td>
 					<td>${carro.modelo}</td>
 					<td>${carro.cor}</td>
 					<td>${carro.ano}</td>
 					<td>
-						<a href="remova/${status.index}">Excluir</a>
-						<a href="edicao/${status.index}">Editar</a>
+						<a href="remova/${carro.id}">Excluir</a>
+						<a href="edicao/${carro.id}">Editar</a>
 					</td>
 				</tr>
 			</c:forEach>

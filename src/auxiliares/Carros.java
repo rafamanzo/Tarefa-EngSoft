@@ -29,6 +29,7 @@ public class Carros {
 			System.out.println(e.getMessage());
 		}
 	}
+<<<<<<< HEAD
 
 	public void remove(int num) {
 		lista.remove(num);
@@ -61,5 +62,49 @@ public class Carros {
 
 	public Carro getCarro(int num) {
 		return lista.get(num);
+=======
+	
+	public void remove(long num){
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        session = sessionFactory.openSession();
+		
+		session.delete(session.get(Carro.class, num));
+		session.flush();
+		
+		session.close();
+	}
+	
+	public void atualize(Carro novo){
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        session = sessionFactory.openSession();
+        
+        session.saveOrUpdate(novo);
+        session.flush();
+        
+        session.close();
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Carro> getLista(){
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        session = sessionFactory.openSession();
+        
+		List<Carro> l = session.createCriteria(Carro.class).list();
+		
+		session.close();
+		
+		return l;
+	}
+	
+	public Carro getCarro(long num){
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        session = sessionFactory.openSession();
+        
+		Carro c = (Carro) session.get(Carro.class, num);
+		
+		session.close();
+		
+		return c;
+>>>>>>> a4e789a4cd028c7ab82babecd5db86b48dd35711
 	}
 }
