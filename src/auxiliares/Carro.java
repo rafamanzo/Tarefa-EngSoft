@@ -7,6 +7,14 @@ public class Carro {
 	private String cor;
 	private Integer ano;
 	private long id;
+	
+	public Carro() {
+		this.marca = "";
+		this.modelo = "";
+		this.cor = "";
+		this.ano = 0;
+		this.id = 0;
+	}
 
 	public Carro(String marca, String modelo, String cor, Integer ano, long id) {
 		this.marca = marca;
