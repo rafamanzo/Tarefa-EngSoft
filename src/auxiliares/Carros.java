@@ -11,7 +11,7 @@ import org.hibernate.cfg.Configuration;
 public class Carros {
 	private Session session = null;
 
-	public void adiciona(Carro carro) {
+	public long adiciona(Carro carro) {
 		try {
 			SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 			session = sessionFactory.openSession();
@@ -23,6 +23,8 @@ public class Carros {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
+		
+		return carro.getId();
 	}
 
 	public void remove(long num){
