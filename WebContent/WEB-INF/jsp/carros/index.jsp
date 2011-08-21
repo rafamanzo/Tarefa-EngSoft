@@ -3,6 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Cadastro de carros</title>
+<link rel="stylesheet" href="css/geral.css" type="text/css" />
 </head>
 <body>
 	<div class="cabecalho">
@@ -13,7 +14,7 @@
 		<ul>
 			<li><a href="carros/cadastro" class="menu">Cadastrar</a></li>
 			<li><a href="carros/lista" class="menu">Listar</a></li>
-			<li><a href="cadastro-carros.zip" class="menu">Código Fonte</a></li>
+			<li><a href="cadastro-carros.zip" class="menu">C&oacute;digo Fonte</a></li>
 		</ul>
 	</div>
 	

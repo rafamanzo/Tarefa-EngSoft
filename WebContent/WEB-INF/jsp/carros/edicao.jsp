@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Cadastro de carros</title>
+<link rel="stylesheet" href="../../css/geral.css" type="text/css" />
 </head>
 <body>
 	<div class="cabecalho">
